@@ -5,21 +5,18 @@ import logo from "../images/logo.svg";
 import Question from "../components/ui/Question/Question";
 import './Auth.css'
 
+class Auth extends React.Component {
 
-const line = {
-    lineQuestion:'line'
-}
-
-function Auth() {
-
-    return (
-        <div className="auth">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <LoginInputs/>
-            <LoginButton/>
-            <Question line = {line}/>
-        </div>
-    )
+    render() {
+        return (
+            <div className="auth">
+                <img src={logo} className="App-logo" alt="logo"/>
+                <LoginInputs/>
+                <LoginButton/>
+                <Question/>
+            </div>
+        );
+    }
 }
 
 export default Auth;
