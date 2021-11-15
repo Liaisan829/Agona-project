@@ -1,0 +1,21 @@
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.loginInput{
+    width: 375px;
+    height: 60px;
+    border: none;
+    border-bottom: 1px solid rgba(60, 60, 67, 0.3);
+    background: transparent;
+    text-align: center;
+    font-family: SF Pro Text, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+    color: rgba(60, 60, 67, 0.3);
+}
