@@ -1,44 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import './Question.css'
 
-class Question extends React.Component {
+function Question() {
 
+    const [field1, setField1] = useState('Еще не зарегистрированы?');
+    const [field2, setField2] = useState('Регистрация');
+    const [isRegistered, setRegistered] = useState(false);
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            field1: 'Еще не зарегистрированы?',
-            field2: 'Регистрация',
-            isRegistered: false
+    let handleQuestion = () => {
+        if (!isRegistered) {
+            setField1('Есть логин для входа?')
+            setField2('Войти')
+            setRegistered(true);
+        } else {
+            setField1('Еще не зарегистрированы?');
+            setField2('Регистрация')
+            setRegistered(false);
         }
     }
 
-    handleQuestion = () => {
-        if(!this.state["isRegistered"]){
-            this.setState({
-                'field1': 'Есть логин для входа?',
-                'field2': 'Войти',
-                'isRegistered': true
-            });
-        }
-        else{
-            this.setState({
-                field1: 'Еще не зарегистрированы?',
-                field2: 'Регистрация',
-                'isRegistered': false
-            })
-        }
-    }
-
-    render() {
-        return (
-            <div className="question">
-                <p>{this.state["field1"]}</p>
-                <a href="#" onClick = {this.handleQuestion} >{this.state["field2"]}</a>
-            </div>
-        );
-    }
-
+    return (
+        <div className="question">
+            <p>{field1}</p>
+            <a href="/registration" onClick={handleQuestion}>{field2}</a>
+        </div>
+    );
 }
 
 export default Question;

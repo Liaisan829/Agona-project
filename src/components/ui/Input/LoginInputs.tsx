@@ -1,36 +1,42 @@
 import React from 'react';
-import "./LoginInput.css"
+import './LoginInput.css'
 
-class LoginInputs extends React.Component {
-    //осталось при неверном сделать красный бордер и когда просто так кнопу сделать синей
-    //и еще ревью кода
+function LoginInputs() {
+    //осталось когда просто так кнопу сделать синей
+    //и еще ревью кода /^([\w.%+-]+)@([\w-]+\.)+([\w]
 
-    checkEmail = (event) => {
+    let checkEmail = (event) => {
         const inputValue = event.target.value;
+        const input = event.target;
         const errorEmail = "anastasia@mail.com";
         if (inputValue === errorEmail) {
+            input.classList.add('error');
             console.log('Неверные логин или пароль');
+        } else {
+            input.classList.remove('error');
         }
     }
 
 
-    checkPass = (event) => {
+    let checkPass = (event) => {
         const inputValue = event.target.value;
-        const errorEmail = "qwerty008";
-        if (inputValue === errorEmail) {
+        const input = event.target;
+        // const errorEmail = "qwerty008";
+        if (inputValue.length < 6) {
+            input.classList.add('error');
             console.log('Неверные логин или пароль');
+        } else {
+            input.classList.remove('error');
         }
     }
 
-    render() {
-        return (
-            <div className="input">
-                <input onInput={this.checkEmail} type="email" className="loginInput"
-                       placeholder="Адрес электронной почты"/>
-                <input onInput={this.checkPass} type="password" className="loginInput" placeholder="Пароль"/>
-            </div>
-        );
-    }
+    return (
+        <div className="input">
+            <input onInput={checkEmail} type="email" className="loginInput"
+                   placeholder="Адрес электронной почты"/>
+            <input onInput={checkPass} type="password" className="loginInput" placeholder="Пароль"/>
+        </div>
+    );
 }
 
 export default LoginInputs;

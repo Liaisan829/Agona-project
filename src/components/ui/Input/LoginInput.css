@@ -19,3 +19,7 @@
     line-height: 22px;
     color: rgba(60, 60, 67, 0.3);
 }
+
+.error{
+    color: #EB5757;
+}
