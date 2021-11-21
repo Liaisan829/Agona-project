@@ -3,14 +3,14 @@ img {
     display: flex;
 }
 
-.signIn {
+.signUp {
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
 }
 
-input {
+input{
     width: 375px;
     height: 60px;
     border: none;

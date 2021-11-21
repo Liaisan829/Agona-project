@@ -3,8 +3,7 @@ import LoginInputs from "../components/ui/Input/LoginInputs";
 import LoginButton from "../components/ui/Button/LoginButton";
 import logo from "../images/logo.svg";
 import Question from "../components/ui/Question/Question";
-import './Auth.css'
-import VideoForm from "../components/VideoForm";
+import AuthForm from "../components/AuthForm";
 
 function Auth() {
 
@@ -14,7 +13,7 @@ function Auth() {
             {/*<LoginInputs/>*/}
             {/*<LoginButton/>*/}
             {/*<Form/>*/}
-            <VideoForm/>
+            <AuthForm/>
             <Question/>
         </div>
     );
