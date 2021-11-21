@@ -78,8 +78,6 @@ function RegisForm() {
             // button.classList.remove('block')
             setInputError('')
         }
-
-
     }
 
     return (

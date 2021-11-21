@@ -28,7 +28,6 @@ function Question() {
             <NavLink to={href} onClick = {handleQuestion}>
                 {hrefText}
             </NavLink>
-
         </div>
     );
 }

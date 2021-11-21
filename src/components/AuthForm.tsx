@@ -8,7 +8,7 @@ function AuthForm() {
     const [inputError, setInputError] = useState('')
     const [formValid, setFormValid] = useState(false)
 
-//начинаем что-то вводить в инпуты и кнопка активируется
+   //начинаем что-то вводить в инпуты и кнопка активируется
     useEffect(() => {
         if (email.length > 0 || password.length > 0) {
             setFormValid(true);

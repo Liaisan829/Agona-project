@@ -3,8 +3,8 @@ import './pages/Regis.css'
 import Auth from './pages/Auth';
 import Regis from './pages/Regis';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Main from "./pages/Main";
 import './pages/Main.css'
+import Main from "./pages/Main";
 
 function App() {
 
