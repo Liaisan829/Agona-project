@@ -1,10 +1,10 @@
-.login {
+.button {
     width: 149px;
     height: 50px;
     padding-top: 111px;
 }
 
-.loginButton {
+.button button {
     background: rgba(116, 116, 128, 0.08);
     border-radius: 25px;
     border: none;

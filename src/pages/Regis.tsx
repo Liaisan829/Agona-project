@@ -4,7 +4,6 @@ import React from 'react';
 import logo from "../images/logo.svg";
 import Question from "../components/ui/Question/Question";
 import RegisForm from '../components/RegisForm'
-import './loginPageStyle.css';
 
 
 function Regis() {

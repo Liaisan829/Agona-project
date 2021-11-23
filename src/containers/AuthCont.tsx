@@ -1,18 +1,26 @@
 import {Input} from "../components/ui/Input/Input";
-import LoginButton from "../components/ui/Button/LoginButton";
-import React, {useState} from "react";
+import {Button} from '../components/ui/Button/Button';
+import React, {useEffect, useState} from "react";
 
 
 export const AuthCont = () => {
     const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
-     const [emailError, setEmailError] = useState(true);
-    // const [passwordError, setPasswordError] = useState(true)
-    // const [inputError, setInputError] = useState('')
-    // const [formValid, setFormValid] = useState(false)
+    const [password, setPassword] = useState('');
+    const [emailError, setEmailError] = useState(true);
+    const [passwordError, setPasswordError] = useState(true)
+    const [inputError, setInputError] = useState('')
+    const [formValid, setFormValid] = useState(false)
 
+    useEffect(() => {
+        if (email.length > 0 || password.length > 0) {
+            setFormValid(true);
 
-    const validateEmail = (event:any) =>{
+        } else {
+            setFormValid(false)
+        }
+    }, [email, password])
+
+    const validateEmail = (event: any) => {
         const email = event.target.value
         const input = event.target
 
@@ -27,10 +35,39 @@ export const AuthCont = () => {
         }
     };
 
-    return(
-        <div className = "authCont">
-            <Input type = "email" value = {email} onChange = {validateEmail} placeholder = "Адрес электронной почты"/>
-            <LoginButton/>
+    const validatePassword = (event: any) => {
+        const password = event.target.value
+        const input = event.target
+        setPassword(password)
+
+        if (password.length < 6) {
+            setPasswordError(true)
+            input.classList.add('error')
+        } else {
+            setPasswordError(false)
+            input.classList.remove('error')
+        }
+    };
+
+    const onButtonClick = (e: any) => {
+        const button = e.target;
+        if (emailError || passwordError) {
+            setFormValid(false);
+            button.classList.add('block')
+            setInputError('Неверные пароль или логин')
+        } else {
+            setFormValid(true);
+            button.classList.remove('block')
+            setInputError('')
+        }
+    }
+
+    return (
+        <div className="authCont">
+            <Input type="email" value={email} onChange={validateEmail} placeholder="Адрес электронной почты"/>
+            <Input type="password" value={password} onChange={validatePassword} placeholder="Пароль"/>
+            {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
+            <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText = "Войти"/>
         </div>
     );
 }

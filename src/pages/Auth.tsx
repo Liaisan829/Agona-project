@@ -3,7 +3,6 @@ import logo from "../images/logo.svg";
 import Question from "../components/ui/Question/Question";
 import {AuthCont} from '../containers/AuthCont';
 // import AuthForm from "../components/AuthForm";
-import './loginPageStyle.css';
 
 
 function Auth() {
