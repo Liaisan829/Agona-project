@@ -1,5 +1,7 @@
 import logo from '../images/logo.svg';
 import React from "react";
+import './Main.css'
+
 
 function Main() {
     return (

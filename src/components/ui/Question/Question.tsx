@@ -6,11 +6,11 @@ function Question() {
     const [question, setQuestion] = useState('Еще не зарегистрированы?');
     const [href, setHref] = useState('/registration');
     const [hrefText, setHrefText] = useState('Регистрация');
-    const [isRegistered, setRegistered] = useState(false);
+    // const [isRegistered, setRegistered] = useState(false);
 
     let handleQuestion = () => {
-        if (!isRegistered) {
-            setRegistered(true);
+        if (hrefText === 'Регистрация') {
+            // setRegistered(true);
             setQuestion('Есть логин для входа?')
             setHrefText('Войти')
             setHref('/authorization');
@@ -18,7 +18,6 @@ function Question() {
             setQuestion('Еще не зарегистрированы?');
             setHrefText('Регистрация')
             setHref('/registration');
-            setRegistered(false);
         }
     }
 

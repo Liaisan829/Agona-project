@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 
 function RegisForm() {
-    const [email, setEmail] = useState('');
+    let [email, setEmail] = useState('');
     const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
     const [emailError, setEmailError] = useState(true);
@@ -42,7 +42,7 @@ function RegisForm() {
         const input = event.target
         setPassword1(password)
 
-        if (password.length < 3 || password.length > 10) {
+        if (password.length < 6) {
             setPassword1Error(true)
             setInputError('неверный пароль')
             input.classList.add('error')
@@ -75,14 +75,14 @@ function RegisForm() {
             setInputError('Неверный пароль')
         } else {
             setFormValid(true);
-            // button.classList.remove('block')
+            //button.classList.remove('block')
             setInputError('')
         }
     }
 
     return (
-        <div className='signUp'>
-            <form className='signUp'>
+        <div className='login' id='login'>
+            <form className='login'>
                 <input onChange={validateEmail} value={email} type="email" placeholder='Адрес электронной почты'/>
                 <input onChange={validatePassword1} value={password1} type="password" placeholder='Пароль'/>
                 <input onChange={validatePassword2} value={password2} type="password" placeholder='Повторите пароль'/>

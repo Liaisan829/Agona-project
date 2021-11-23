@@ -8,7 +8,7 @@ function AuthForm() {
     const [inputError, setInputError] = useState('')
     const [formValid, setFormValid] = useState(false)
 
-   //начинаем что-то вводить в инпуты и кнопка активируется
+    //начинаем что-то вводить в инпуты и кнопка активируется
     useEffect(() => {
         if (email.length > 0 || password.length > 0) {
             setFormValid(true);
@@ -38,7 +38,7 @@ function AuthForm() {
         const input = event.target
         setPassword(password)
 
-        if (password.length < 3 || password.length > 10) {
+        if (password.length < 6) {
             setPasswordError(true)
             input.classList.add('error')
         } else {
@@ -53,7 +53,7 @@ function AuthForm() {
         if (emailError || passwordError) {
             setFormValid(false);
             button.classList.add('block')
-            setInputError('неверные пароль или логин')
+            setInputError('Неверные пароль или логин')
         } else {
             setFormValid(true);
             button.classList.remove('block')
@@ -62,8 +62,8 @@ function AuthForm() {
     }
 
     return (
-        <div className="signIn">
-            <form className="signIn">
+        <div className="login">
+            <form className="login">
                 <input
                     type="text"
                     placeholder="Адрес электронной почты"

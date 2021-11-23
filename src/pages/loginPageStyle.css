@@ -1,9 +1,18 @@
-img {
+.regis img {
     margin: 139px auto 70px auto;
     display: flex;
+    width: 92px;
+    height: 42px;
 }
 
-.signIn {
+.auth img {
+    margin: 139px auto 70px auto;
+    display: flex;
+    width: 92px;
+    height: 42px;
+}
+
+.login {
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -47,7 +56,8 @@ button {
     font-size: 17px;
     line-height: 22px;
     text-align: center;
-    padding: 14px 50px;
+    padding-top: 14px;
+    padding-bottom: 14px;
     box-sizing: border-box;
     cursor: pointer;
 }
