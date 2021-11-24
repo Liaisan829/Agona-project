@@ -1,18 +1,15 @@
 import React from 'react';
 import logo from "../images/logo.svg";
-import Question from "../components/ui/Question/Question";
 import {AuthCont} from '../containers/AuthCont';
-// import AuthForm from "../components/AuthForm";
-
+import './logo-style.css'
 
 function Auth() {
 
     return (
         <div className="auth">
-            <img src={logo} className="App-logo" alt="logo"/>
-            {/*<AuthForm/>*/}
+            {/*кнопка когда активируется не меняет цвет даже на дефолтный черный*/}
+            <img src={logo} className="logo" alt="logo"/>
             <AuthCont/>
-            <Question/>
         </div>
     );
 }

@@ -1,0 +1,33 @@
+.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 375px;
+    margin: 0 auto;
+}
+
+.regis{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 375px;
+    margin: 0 auto;
+}
+
+.auth .logo{
+    width: 98px;
+    height: 42px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 111px;
+    padding-top: 120px;
+}
+
+.regis .logo{
+    width: 98px;
+    height: 42px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 95px;
+    padding-top: 120px;
+}

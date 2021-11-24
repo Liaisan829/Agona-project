@@ -1,8 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import {Input} from "../components/ui/Input/Input";
+import {Button} from "../components/ui/Button/Button";
+import {Question} from "../components/ui/Question/Question";
+import React, {useEffect, useState} from "react";
 
+export const RegisCont = () => {
 
-function RegisForm() {
-    let [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
     const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
     const [emailError, setEmailError] = useState(true);
@@ -28,7 +31,6 @@ function RegisForm() {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(String(email).toLowerCase())) {
             setEmailError(true)
-            setInputError('Неверный емэил')
             input.classList.add('error')
         } else {
             setEmailError(false)
@@ -44,7 +46,6 @@ function RegisForm() {
 
         if (password.length < 6) {
             setPassword1Error(true)
-            setInputError('неверный пароль')
             input.classList.add('error')
         } else {
             setPassword1Error(false)
@@ -69,28 +70,23 @@ function RegisForm() {
         if (emailError) {
             setFormValid(false);
             setInputError('Неверный email')
-            // button.classList.add('block')
         } else if (password1Error || password2Error) {
             setFormValid(false);
             setInputError('Неверный пароль')
         } else {
             setFormValid(true);
-            //button.classList.remove('block')
             setInputError('')
         }
     }
 
     return (
-        <div className='login' id='login'>
-            <form className='login'>
-                <input onChange={validateEmail} value={email} type="email" placeholder='Адрес электронной почты'/>
-                <input onChange={validatePassword1} value={password1} type="password" placeholder='Пароль'/>
-                <input onChange={validatePassword2} value={password2} type="password" placeholder='Повторите пароль'/>
-                {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
-                <button onClick={onButtonClick} disabled={!formValid}>Регистрация</button>
-            </form>
+        <div className="regisCont">
+            <Input type="email" value={email} onChange={validateEmail} placeholder="Адрес электронной почты"/>
+            <Input type="password" value={password1} onChange={validatePassword1} placeholder="Пароль"/>
+            <Input type="password" value={password2} onChange={validatePassword2} placeholder="Повторите пароль"/>
+            {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
+            <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText="Регистрация"/>
+            <Question question='Есть логин для входа?' href='/authorization' hrefText='Войти'/>
         </div>
     );
-}
-
-export default RegisForm;
+};

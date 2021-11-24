@@ -1,5 +1,5 @@
 import React from "react";
-import './LoginInput.css'
+import './Input.css'
 
 export const Input = (props) => {
 

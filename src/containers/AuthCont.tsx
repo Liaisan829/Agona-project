@@ -1,6 +1,7 @@
 import {Input} from "../components/ui/Input/Input";
 import {Button} from '../components/ui/Button/Button';
 import React, {useEffect, useState} from "react";
+import {Question} from "../components/ui/Question/Question";
 
 
 export const AuthCont = () => {
@@ -53,11 +54,11 @@ export const AuthCont = () => {
         const button = e.target;
         if (emailError || passwordError) {
             setFormValid(false);
-            button.classList.add('block')
+            button.classList.add('active')
             setInputError('Неверные пароль или логин')
         } else {
             setFormValid(true);
-            button.classList.remove('block')
+            button.classList.remove('active')
             setInputError('')
         }
     }
@@ -67,7 +68,8 @@ export const AuthCont = () => {
             <Input type="email" value={email} onChange={validateEmail} placeholder="Адрес электронной почты"/>
             <Input type="password" value={password} onChange={validatePassword} placeholder="Пароль"/>
             {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
-            <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText = "Войти"/>
+            <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText="Войти"/>
+            <Question question='Еще не зарегистрированы?' href='/registration' hrefText='Регистрация'/>
         </div>
     );
 }

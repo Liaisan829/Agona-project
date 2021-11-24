@@ -1,5 +1,5 @@
 import React from "react";
-import './LoginButton.css';
+import './Button.css';
 
 export const Button = (props) => {
     return (

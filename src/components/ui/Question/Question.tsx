@@ -1,34 +1,14 @@
-import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
+import React from "react";
+import './Question.css'
 
-function Question() {
-
-    const [question, setQuestion] = useState('Еще не зарегистрированы?');
-    const [href, setHref] = useState('/registration');
-    const [hrefText, setHrefText] = useState('Регистрация');
-    // const [isRegistered, setRegistered] = useState(false);
-
-    let handleQuestion = () => {
-        if (hrefText === 'Регистрация') {
-            // setRegistered(true);
-            setQuestion('Есть логин для входа?')
-            setHrefText('Войти')
-            setHref('/authorization');
-        } else {
-            setQuestion('Еще не зарегистрированы?');
-            setHrefText('Регистрация')
-            setHref('/registration');
-        }
-    }
-
-    return (
-        <div className="question">
-            <p>{question}</p>
-            <NavLink to={href} onClick = {handleQuestion}>
-                {hrefText}
-            </NavLink>
-        </div>
-    );
-}
-
-export default Question;
+export const Question = (props) => {
+  return(
+      <div className = "question">
+          <p>{props.question}</p>
+          <NavLink className = 'a' to={props.href} >
+              {props.hrefText}
+          </NavLink>
+      </div>
+  );
+};
