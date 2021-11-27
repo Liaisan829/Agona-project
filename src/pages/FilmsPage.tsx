@@ -7,6 +7,7 @@ import "./FilmsPage.css"
 export const FilmsPage = observer(() => {
 
     const {filmStore: {films}} = useStores();
+    console.log(films);
 
     return (
         <>

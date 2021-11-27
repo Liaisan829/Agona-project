@@ -7,10 +7,10 @@
 }
 
 .button button {
-    background: rgba(116, 116, 128, 0.08);
+    /*background: rgba(116, 116, 128, 0.08);*/
     border-radius: 25px;
     border: none;
-    color: rgba(60, 60, 67, 0.3);
+    /*color: rgba(60, 60, 67, 0.3);*/
     font-family: SF Pro Text, serif;
     font-style: normal;
     font-weight: 600;

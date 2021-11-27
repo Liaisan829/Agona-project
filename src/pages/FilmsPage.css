@@ -12,7 +12,8 @@
 .filmImg{
     width: 102px;
     height: 160px;
-    position: relative;
+    background: url("../images/films/minari.svg");
+    position: absolute;
 }
 
 .filmRating{
@@ -42,4 +43,5 @@
     line-height: 21px;
     color: #000000;
     padding-top: 15px;
+    z-index: 1;
 }

@@ -2,6 +2,7 @@ import {Input} from "../components/ui/Input/Input";
 import {Button} from "../components/ui/Button/Button";
 import {Question} from "../components/ui/Question/Question";
 import React, {useEffect, useState} from "react";
+import {Redirect, useHistory} from "react-router";
 
 export const RegisCont = () => {
 
@@ -13,6 +14,8 @@ export const RegisCont = () => {
     const [password2Error, setPassword2Error] = useState(true);
     const [formValid, setFormValid] = useState(false);
     const [inputError, setInputError] = useState('');
+    const [isRegistered, setIsRegistered] = useState(false)
+    const history = useHistory();
 
     useEffect(() => {
         if (email.length > 0 || password1.length > 0 || password2.length > 0) {
@@ -66,7 +69,7 @@ export const RegisCont = () => {
         }
     }
 
-    const onButtonClick = (e: any) => {
+    const onButtonClick = () => {
         if (emailError) {
             setFormValid(false);
             setInputError('Неверный email')
@@ -76,6 +79,13 @@ export const RegisCont = () => {
         } else {
             setFormValid(true);
             setInputError('')
+            setIsRegistered(true)
+            setTimeout(() => {
+                setIsRegistered(false)
+            }, 3000);
+            setTimeout(() => {
+                history.push("/collection");
+            }, 3001)
         }
     }
 
@@ -85,7 +95,19 @@ export const RegisCont = () => {
             <Input type="password" value={password1} onChange={validatePassword1} placeholder="Пароль"/>
             <Input type="password" value={password2} onChange={validatePassword2} placeholder="Повторите пароль"/>
             {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
-            <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText="Регистрация"/>
+            {isRegistered ?
+                <div id="floatingBarsG">
+                    <div className="blockG" id="rotateG_01"/>
+                    <div className="blockG" id="rotateG_02"/>
+                    <div className="blockG" id="rotateG_03"/>
+                    <div className="blockG" id="rotateG_04"/>
+                    <div className="blockG" id="rotateG_05"/>
+                    <div className="blockG" id="rotateG_06"/>
+                    <div className="blockG" id="rotateG_07"/>
+                    <div className="blockG" id="rotateG_08"/>
+                </div> :
+                <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText="Регистрация"/>
+            }
             <Question question='Есть логин для входа?' href='/authorization' hrefText='Войти'/>
         </div>
     );

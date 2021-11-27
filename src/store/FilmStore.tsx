@@ -21,7 +21,7 @@ export class FilmStore {
         // {
         //     id: 2,
         //     rating: 6.6,
-        //     img: {midsommar},
+        //     img: "midsommar",
         //     title: 'midsommar'
         // },
         // {
