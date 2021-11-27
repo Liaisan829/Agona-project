@@ -29,7 +29,7 @@ export const MainContainer: FC<MainContainerProps> = ({children}) => {
                     </div>
                 </nav>
 
-                <img src={logo} alt="short-logo"/>
+                <img src={logo} className = "short-logo" alt="short-logo"/>
 
                 <nav className='right-side'>
                     <img src={loupe} className = "loupe" alt="loupe"/>

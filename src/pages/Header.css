@@ -60,9 +60,10 @@
     justify-content: space-between;
 }
 
-.short-logo {
+.header .short-logo {
     width: 47px;
     height: 18px;
+    margin-left: 390px;
 }
 
 .right-side {
@@ -121,5 +122,11 @@
     background: #FFFFFF;
     border: 0.5px solid rgba(0, 0, 0, 0.04);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04);
-    border-radius: 6.93px;
+    border-radius: 7px;
+}
+
+.filmsCollection{
+    max-width: 460px;
+    width: 100%;
+    margin: 0 auto;
 }

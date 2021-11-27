@@ -1,0 +1,115 @@
+/*.film{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+
+.film {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+}
+
+.filmImage {
+    width: 267px;
+    height: 417px;
+
+}
+
+.film-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.film-info h5 {
+    font-family: SF Pro Display, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.17px;
+    color: #181818;
+}
+
+.year-rating {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.year-rating h6 {
+    font-family: SF Pro Display, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 100% */
+
+    text-align: center;
+
+    /* Black/100 */
+
+    color: #181818;
+}
+
+.year-rating p {
+    font-family: SF Pro Text, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.24px;
+    color: #002DFF;
+    background: #FFFFFF;
+    border: 2px solid #002DFF;
+    box-sizing: border-box;
+    border-radius: 14px;
+}
+
+.will-watch-plus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: SF Pro Text, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.336px;
+    color: #002DFF;
+}
+
+.film p {
+    font-family: SF Pro Display, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    color: #181818;
+}
+
+.genres {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.genres p {
+    font-family: SF Pro Text, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #000000;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 14px;
+}

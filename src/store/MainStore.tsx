@@ -1,12 +1,12 @@
-import {UserStore} from "./UserStore";
+import {FilmStore} from "./FilmStore";
 
 class MainStore{
     //подключаем все строы сюда чтоб в одном месте все были
 
-    userStore:UserStore;
+    filmStore:FilmStore;
 
     constructor() {
-        this.userStore = new UserStore();
+        this.filmStore = new FilmStore();
     }
 }
 

@@ -1,0 +1,45 @@
+.filmsCollection{
+    display: flex;
+    flex-direction: row;;
+    flex-wrap: wrap;
+}
+
+.film{
+    width: 102px;
+    height: 160px;
+}
+
+.filmImg{
+    width: 102px;
+    height: 160px;
+    position: relative;
+}
+
+.filmRating{
+    width: 24px;
+    height: 15px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 14px;
+    background: #FFFFFF;
+    border: 1px solid #002DFF;
+    box-sizing: border-box;
+    text-align: right;
+    font-family: SF Pro Text, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    margin-left: 75px;
+    margin-top: 5px;
+}
+
+.filmTitle{
+    font-family: SF Pro Text, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 21px;
+    color: #000000;
+    padding-top: 15px;
+}

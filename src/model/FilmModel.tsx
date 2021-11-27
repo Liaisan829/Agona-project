@@ -1,5 +1,6 @@
 export interface FilmModel{
+    id: number
     rating: number
-    img: object;
+    img: any
     title: string
 }

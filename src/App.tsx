@@ -7,7 +7,7 @@ import {Provider} from 'mobx-react';
 import {createBrowserHistory} from 'history';
 import {mainStore} from "./store/MainStore";
 // import {MainContainer} from "./pages/MainContainer";
-// import {FilmPage} from "./pages/FilmPage";
+import {FilmPage} from "./pages/FilmPage";
 import {FilmsPage} from './pages/FilmsPage';
 
 const history = createBrowserHistory();
@@ -24,7 +24,7 @@ function App() {
                         <Route path="/registration" exact component={Regis}/>
                         {/*<Route path="/collection" exact component={MainContainer}/>*/}
                         <Route path="/collection" exact component={FilmsPage}/>
-                        {/*<Route path="/collection/:id" exact component={FilmPage}/>*/}
+                        <Route path="/collection/:id" exact component={FilmPage}/>
                     </Switch>
                 </BrowserRouter>
             </Provider>
