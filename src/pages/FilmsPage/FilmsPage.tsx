@@ -1,8 +1,9 @@
-import {MainContainer} from "./MainContainer";
+import {BaseLayout} from "../BaseLayout/BaseLayout";
 import {observer} from "mobx-react";
-import {useStores} from "../utils/Utils";
-import {Film} from "../components/Film";
+import {useStores} from "../../utils/Utils";
+import {Film} from "../../components/Film";
 import "./FilmsPage.css"
+import {ToggleSwitch} from "../../components/ui/ToggleSwitch/ToggleSwitch";
 
 export const FilmsPage = observer(() => {
 
@@ -12,14 +13,10 @@ export const FilmsPage = observer(() => {
     return (
         <>
             {/*collection of films is here*/}
-            <MainContainer>
+            <BaseLayout>
                 <div className="films-clicker">
                     <h1>Коллекция</h1>
-                    <div className="buttons">
-                        <button className='will-watch'>Буду смотреть</button>
-                        <button className="watched">Просмотрено</button>
-                    </div>
-
+                    <ToggleSwitch/>
                     <div className="filmsCollection">
                         <div className="film">
                             {films.map(film => (
@@ -28,7 +25,7 @@ export const FilmsPage = observer(() => {
                         </div>
                     </div>
                 </div>
-            </MainContainer>
+            </BaseLayout>
         </>
     );
 });

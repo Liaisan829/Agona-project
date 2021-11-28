@@ -1,8 +1,8 @@
-import {MainContainer} from "./MainContainer";
+import {BaseLayout} from "../BaseLayout/BaseLayout";
 import {observer} from "mobx-react";
-import {useStores} from "../utils/Utils";
-import plus from '../images/plus.svg'
-import minari from '../images/films/minari.svg';
+import {useStores} from "../../utils/Utils";
+import plus from '../../images/plus.svg'
+import minari from '../../images/films/minari.svg';
 import './FilmPage.css'
 
 export const FilmPage = observer(() => {
@@ -10,7 +10,7 @@ export const FilmPage = observer(() => {
 
     return (
         <>
-            <MainContainer>
+            <BaseLayout>
                 <div className="film">
 
                     <img className="filmImage" src={minari} alt=""/>
@@ -34,7 +34,7 @@ export const FilmPage = observer(() => {
                         </div>
                     </div>
                 </div>
-            </MainContainer>
+            </BaseLayout>
             {/*exact film page is here*/}
         </>
     );

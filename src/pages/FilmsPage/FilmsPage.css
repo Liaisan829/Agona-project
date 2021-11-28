@@ -12,7 +12,7 @@
 .filmImg{
     width: 102px;
     height: 160px;
-    background: url("../images/films/minari.svg");
+    background: url("../../images/films/minari.svg");
     position: absolute;
 }
 
@@ -42,6 +42,6 @@
     font-size: 12px;
     line-height: 21px;
     color: #000000;
-    padding-top: 15px;
+    padding-top: 170px;
     z-index: 1;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from "../images/logo.svg";
-import {AuthCont} from '../containers/AuthCont';
+import logo from "../../images/logo.svg";
+import {AuthCont} from '../../containers/AuthCont';
 import './logo-style.css'
 
 function Auth() {

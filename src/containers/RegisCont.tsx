@@ -2,7 +2,8 @@ import {Input} from "../components/ui/Input/Input";
 import {Button} from "../components/ui/Button/Button";
 import {Question} from "../components/ui/Question/Question";
 import React, {useEffect, useState} from "react";
-import {Redirect, useHistory} from "react-router";
+import {useHistory} from "react-router";
+import {Loading} from "../components/ui/Loading/Loading";
 
 export const RegisCont = () => {
 
@@ -82,10 +83,9 @@ export const RegisCont = () => {
             setIsRegistered(true)
             setTimeout(() => {
                 setIsRegistered(false)
-            }, 3000);
-            setTimeout(() => {
-                history.push("/collection");
-            }, 3001)
+                history.push("/collection")
+            }, 3000, 3001);
+
         }
     }
 
@@ -96,16 +96,7 @@ export const RegisCont = () => {
             <Input type="password" value={password2} onChange={validatePassword2} placeholder="Повторите пароль"/>
             {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
             {isRegistered ?
-                <div id="floatingBarsG">
-                    <div className="blockG" id="rotateG_01"/>
-                    <div className="blockG" id="rotateG_02"/>
-                    <div className="blockG" id="rotateG_03"/>
-                    <div className="blockG" id="rotateG_04"/>
-                    <div className="blockG" id="rotateG_05"/>
-                    <div className="blockG" id="rotateG_06"/>
-                    <div className="blockG" id="rotateG_07"/>
-                    <div className="blockG" id="rotateG_08"/>
-                </div> :
+                <Loading/> :
                 <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText="Регистрация"/>
             }
             <Question question='Есть логин для входа?' href='/authorization' hrefText='Войти'/>

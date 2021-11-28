@@ -1,13 +1,13 @@
-import Auth from './pages/Auth';
-import Regis from './pages/Regis';
+import Auth from './pages/Login/Auth';
+import Regis from './pages/Login/Regis';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Redirect, Router} from 'react-router';
-import Main from "./pages/Main";
+import Main from "./pages/MainPage/Main";
 import {Provider} from 'mobx-react';
 import {createBrowserHistory} from 'history';
 import {mainStore} from "./store/MainStore";
-import {FilmPage} from "./pages/FilmPage";
-import {FilmsPage} from './pages/FilmsPage';
+import {FilmPage} from "./pages/FilmPage/FilmPage";
+import {FilmsPage} from './pages/FilmsPage/FilmsPage';
 
 const history = createBrowserHistory();
 
