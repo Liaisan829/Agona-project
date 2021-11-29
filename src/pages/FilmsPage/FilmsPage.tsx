@@ -4,6 +4,7 @@ import {useStores} from "../../utils/Utils";
 import {Film} from "../../components/Film";
 import "./FilmsPage.css"
 import {ToggleSwitch} from "../../components/ui/ToggleSwitch/ToggleSwitch";
+import {NavLink} from "react-router-dom";
 
 export const FilmsPage = observer(() => {
 
