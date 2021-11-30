@@ -1,7 +1,7 @@
 import {FilmModel} from "../model/FilmModel";
 import {FC} from "react";
 import {NavLink} from "react-router-dom";
-import '../pages/FilmsPage/FilmsPage.css'
+import './Film.css'
 
 interface FilmProps {
     film: FilmModel;
@@ -18,4 +18,4 @@ export const Film: FC<FilmProps> = ({film}) => {
             <div className="filmTitle">{film.title}</div>
         </>
     );
-};
+}

@@ -11,7 +11,8 @@ export const FilmPage = observer(() => {
     return (
         <>
             <BaseLayout>
-                <div className="film">
+                <div className="film-page">
+
 
                     <img className="filmImage" src={minari} alt=""/>
 

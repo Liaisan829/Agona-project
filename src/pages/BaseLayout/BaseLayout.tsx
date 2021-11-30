@@ -20,7 +20,7 @@ export const BaseLayout: FC<MainContainerProps> = ({children}) => {
                         <div className="collection-round">
                             <NavLink to='/collection' exact className='collection' activeClassName='active'>
                                 <img src={round} alt="round"/>
-                                <p className = "collectionText">Коллекция</p>
+                                <p className="collectionText">Коллекция</p>
                             </NavLink>
                         </div>
                         <div className='add-with-plus'>
@@ -41,7 +41,9 @@ export const BaseLayout: FC<MainContainerProps> = ({children}) => {
             </header>
 
             <main>
-                {children}
+                <div className="main-container">
+                    {children}
+                </div>
                 {/*здесь будет как раз та коллекция фильмов которые будут лежать в стор*/}
             </main>
         </>

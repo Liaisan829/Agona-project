@@ -1,9 +1,4 @@
-/*.film{*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*}*/
-
-.film {
+.film-page {
     display: flex;
     flex-direction: row;
     margin: 0 auto;

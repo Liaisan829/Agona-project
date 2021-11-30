@@ -1,47 +1,27 @@
-.filmsCollection{
+.film {
     display: flex;
-    flex-direction: row;;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.film{
-    width: 102px;
-    height: 160px;
+.filmCollection {
+    margin-top: 42px;
 }
 
-.filmImg{
-    width: 102px;
-    height: 160px;
-    background: url("../../images/films/minari.svg");
-    position: absolute;
-}
-
-.filmRating{
-    width: 24px;
-    height: 15px;
-    position: absolute;
-    z-index: 1;
-    border-radius: 14px;
-    background: #FFFFFF;
-    border: 1px solid #002DFF;
-    box-sizing: border-box;
-    text-align: right;
-    font-family: SF Pro Text, sans-serif;
+h1 {
+    font-family: SF Pro Display, sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 12px;
-    margin-left: 75px;
-    margin-top: 5px;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 41px;
+    text-align: center;
+    margin-top: 82px;
+    margin-bottom: 35px;
 }
 
-.filmTitle{
-    font-family: SF Pro Text, sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 21px;
-    color: #000000;
-    padding-top: 170px;
-    z-index: 1;
+.switch-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

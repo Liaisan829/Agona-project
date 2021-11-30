@@ -1,62 +1,79 @@
-import {action, observable, override} from "mobx";
+import {action, makeObservable, observable, override} from "mobx";
 
 export default class AuthStore {
 
-    @observable email: string;
-    @observable password: string;
-    @observable emailError: boolean;
-    @observable passwordError: boolean;
-    @observable inputError: string;
-    @observable formValid: boolean;
-    @observable isRegistered: boolean;
+    email = '';
+    password1 = '';
+    password2 = '';
+    emailError = true;
+    password1Error = true;
+    password2Error = true;
+    inputError = '';
+    formValid = false;
+    isRegistered = false;
 
     constructor() {
-        this.email = '';
-        this.password = '';
-        this.emailError = true;
-        this.passwordError = true;
-        this.inputError = '';
-        this.formValid = false;
-        this.isRegistered = false;
+        makeObservable(this, {
+            email: observable,
+            password1: observable,
+            password2: observable,
+            emailError: observable,
+            password1Error: observable,
+            password2Error: observable,
+            inputError: observable,
+            formValid: observable,
+            isRegistered: observable,
+            setFormValid: action,
+            setEmailError: action,
+            setIsRegistered: action,
+            setPassword1Error: action,
+            setPassword2Error: action,
+            setInputError: action,
+            setPassword1: action,
+            setPassword2: action,
+            setEmail: action,
+            validateEmail: action,
+            validatePassword1: action,
+            validatePassword2: action,
+        })
     }
 
-    @action
     setFormValid = (value: boolean): void => {
         this.formValid = value;
     }
 
-    @action
     setEmail = (value: string): void => {
         this.email = value;
     }
 
-    @action
-    setPassword = (value: string): void => {
-        this.password = value;
+    setPassword1 = (value: string): void => {
+        this.password1 = value;
     }
 
-    @action
+    setPassword2 = (value: string): void => {
+        this.password2 = value;
+    }
+
     setEmailError = (value: boolean): void => {
         this.emailError = value;
     }
 
-    @action
-    setPasswordError = (value: boolean): void => {
-        this.passwordError = value;
+    setPassword1Error = (value: boolean): void => {
+        this.password1Error = value;
     }
 
-    @action
+    setPassword2Error = (value: boolean): void => {
+        this.password2Error = value;
+    }
+
     setInputError = (value: string): void => {
         this.inputError = value;
     }
 
-    @action
     setIsRegistered = (value: boolean): void => {
         this.isRegistered = value;
     }
 
-
-    @action
     validateEmail = (event: any) => {
         const emailValue = event.target.value
         const input = event.target
@@ -70,6 +87,32 @@ export default class AuthStore {
         } else {
             this.setEmailError(false)
             input.classList.remove('error')
+        }
+    }
+
+    validatePassword1 = (event: any) => {
+        const password = event.target.value
+        const input = event.target
+        this.setPassword1(password)
+
+        if (password.length < 6) {
+            this.setPassword1Error(true)
+            input.classList.add('error')
+        } else {
+            this.setPassword1Error(false)
+            input.classList.remove('error')
+        }
+    }
+
+    validatePassword2 = (event: any) => {
+        const password = event.target.value
+        this.setPassword2(password)
+        if (password !== this.password1) {
+            this.setPassword2Error(true)
+            this.setInputError('Пароли не совпадают')
+        } else {
+            this.setPassword2Error(false)
+            this.setInputError('');
         }
     }
 }

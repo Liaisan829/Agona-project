@@ -23,7 +23,7 @@ function App() {
                         <Route path="/registration" exact component={Regis}/>
                         <Route path="/collection" exact component={FilmsPage}/>
                         <Route path="/collection/:id" exact component={FilmPage}/>
-                        <Redirect  to="/collection"/>
+                        <Redirect to="/collection"/>
                     </Switch>
                 </BrowserRouter>
             </Provider>

@@ -14,55 +14,33 @@ export const AuthContWithStore = observer(() => {
         authStore:
             {
                 email,
-                password,
+                password1,
                 emailError,
-                passwordError,
+                password1Error,
                 inputError,
                 formValid,
                 isRegistered,
                 setFormValid,
-                setEmail,
-                setPassword,
                 setInputError,
-                setPasswordError,
                 setIsRegistered,
-                setEmailError,
-                validateEmail
+                validateEmail,
+                validatePassword1
             }
     } = useStores();
 
     const history = useHistory();
 
     useEffect(() => {
-        if (email.length > 0 || password.length > 0) {
+        if (email.length > 0 || password1.length > 0) {
             setFormValid(true);
 
         } else {
             setFormValid(false)
         }
-    }, [email, password])
-
-    const validateEmailV = (event: any): void => {
-        console.log(event.target.value);
-        validateEmail(event);
-    };
-
-    const validatePassword = (event: any) => {
-        const password = event.target.value
-        const input = event.target
-        setPassword(password)
-
-        if (password.length < 6) {
-            setPasswordError(true)
-            input.classList.add('error')
-        } else {
-            setPasswordError(false)
-            input.classList.remove('error')
-        }
-    };
+    }, [email, password1])
 
     const onButtonClick = () => {
-        if (emailError || passwordError) {
+        if (emailError || password1Error) {
             setFormValid(false);
             setInputError('Неверные пароль или логин')
         } else {
@@ -79,8 +57,8 @@ export const AuthContWithStore = observer(() => {
 
     return (
         <div className="authCont">
-            <Input type="email" value={email} onChange={validateEmailV} placeholder="Адрес электронной почты"/>
-            <Input type="password" value={password} onChange={validatePassword} placeholder="Пароль"/>
+            <Input type="email" value={email} onChange={validateEmail} placeholder="Адрес электронной почты"/>
+            <Input className = "last-input" type="password" value={password1} onChange={validatePassword1} placeholder="Пароль"/>
             {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
             {isRegistered ?
                 <Loading/> :

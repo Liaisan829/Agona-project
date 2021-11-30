@@ -114,23 +114,8 @@
     padding-left: 31px;
 }
 
-.films-clicker {
-    margin: 0 auto;
-    max-width: 460px;
-    width: 100%;
-}
-
-.films-clicker h1 {
-    font-family: SF Pro Display, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 41px;
-    text-align: center;
-}
-
-.filmsCollection {
-    max-width: 460px;
+.main-container{
+    max-width: 500px;
     width: 100%;
     margin: 0 auto;
 }
