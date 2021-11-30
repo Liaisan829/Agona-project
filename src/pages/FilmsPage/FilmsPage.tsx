@@ -15,7 +15,7 @@ export const FilmsPage = observer(() => {
         <>
             {/*collection of films is here*/}
             <BaseLayout>
-                <h1>Коллекция</h1>
+                <h1 className = "collectionTitle">Коллекция</h1>
                 <div className="switch-menu">
                     <ToggleSwitch/>
                     <img src={menu} alt="menu"/>
@@ -24,6 +24,7 @@ export const FilmsPage = observer(() => {
                     <div className="film">
                         {films.map(film => (
                             <div><Film key={film.id} film={film}/></div>
+
                         ))}
                     </div>
 

@@ -1,56 +1,50 @@
-.film-page {
+.whole-film {
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
-    max-width: 600px;
-    width: 100%;
+    justify-content: space-between;
+    margin-top: 120px;
 }
 
-.filmImage {
-    width: 267px;
-    height: 417px;
-
-}
-
-.film-info {
+.info-film {
     display: flex;
     flex-direction: column;
+    float: left;
+    margin-left: 40px;
 }
 
-.film-info h5 {
+.whole-film-img {
+    width: 250px;
+    height: 417px;
+}
+
+.info-film h1{
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
-    line-height: 20px;
+    line-height: 30px;
     display: flex;
     align-items: center;
     letter-spacing: -0.17px;
     color: #181818;
+    margin-bottom: 20px;
 }
 
-.year-rating {
-    display: flex;
-    flex-direction: row;
-
-}
-
-.year-rating h6 {
+.info-film-year{
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 16px;
-    /* identical to box height, or 100% */
-
     text-align: center;
-
-    /* Black/100 */
-
     color: #181818;
 }
 
-.year-rating p {
+.info-film-rating{
+    background: #FFFFFF;
+    border: 2px solid #002DFF;
+    box-sizing: border-box;
+    border-radius: 14px;
     font-family: SF Pro Text, sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -61,16 +55,26 @@
     text-align: center;
     letter-spacing: -0.24px;
     color: #002DFF;
-    background: #FFFFFF;
-    border: 2px solid #002DFF;
-    box-sizing: border-box;
-    border-radius: 14px;
+    width: 36px;
+    height: 23px;
+    padding: 5px 7px;
+    margin-left: 8px;
 }
 
-.will-watch-plus {
+.year-rating{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.will-watch{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid #002DFF;
+    box-sizing: border-box;
+    border-radius: 22px;
     font-family: SF Pro Text, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -78,9 +82,13 @@
     line-height: 21px;
     letter-spacing: -0.336px;
     color: #002DFF;
+    width: 188px;
+    height: 38px;
+    margin-top: 22px;
+    margin-bottom: 18px;
 }
 
-.film p {
+.info-film-desc{
     font-family: SF Pro Display, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -89,22 +97,25 @@
     color: #181818;
 }
 
-.genres {
+.genres{
     display: flex;
     flex-direction: row;
-    align-items: center;
-
+    width: 280px;
+    justify-content: space-between;
 }
 
-.genres p {
+.genres p{
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 16px;
     font-family: SF Pro Text, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;
+    align-items: center;
+    text-align: center;
     letter-spacing: -0.24px;
     color: #000000;
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    border-radius: 14px;
+    padding: 6px 8px;
 }

@@ -29,7 +29,9 @@ export const BaseLayout: FC<MainContainerProps> = ({children}) => {
                         </div>
                     </nav>
 
-                    <img src={logo} className="short-logo" alt="short-logo"/>
+                    <NavLink to = {`/collection`}>
+                        <img src={logo} className="short-logo" alt="short-logo"/>
+                    </NavLink>
 
                     <nav className='right-side'>
                         <img src={loupe} className="loupe" alt="loupe"/>
