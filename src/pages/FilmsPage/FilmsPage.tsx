@@ -5,7 +5,6 @@ import {Film} from "../../components/Film";
 import "./FilmsPage.css"
 import {ToggleSwitch} from "../../components/ui/ToggleSwitch/ToggleSwitch";
 import menu from '../../images/menu.svg'
-import {NavLink} from "react-router-dom";
 
 export const FilmsPage = observer(() => {
 
@@ -13,7 +12,6 @@ export const FilmsPage = observer(() => {
 
     return (
         <>
-            {/*collection of films is here*/}
             <BaseLayout>
                 <h1 className = "collectionTitle">Коллекция</h1>
                 <div className="switch-menu">

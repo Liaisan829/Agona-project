@@ -8,7 +8,6 @@ function Auth() {
 
     return (
         <div className="auth">
-            {/*кнопка когда активируется не меняет цвет даже на дефолтный черный*/}
             <img src={logo} className="logo" alt="logo"/>
             {/*<AuthCont/>*/}
             <AuthContWithStore/>

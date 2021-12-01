@@ -77,7 +77,6 @@
 
 .button-area .checkbox:checked + .text:after {
     content: "Просмотрено";
-    /*активировали сдвиг ползунка вправо на 175px*/
     left: 175px;
     background: white;
 }

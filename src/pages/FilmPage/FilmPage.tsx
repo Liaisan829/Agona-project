@@ -31,7 +31,6 @@ export const FilmPage = observer(() => {
                     )}
                 </div>
             </BaseLayout>
-            {/*exact film page is here*/}
         </>
     );
 });

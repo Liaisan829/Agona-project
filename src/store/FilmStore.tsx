@@ -1,5 +1,5 @@
 import {FilmModel} from "../model/FilmModel";
-import {makeObservable, observable} from "mobx";
+import {observable} from "mobx";
 import girl from '../images/films/girl.svg';
 import godzilla from '../images/films/godzilla.svg';
 import father from '../images/films/father.svg';

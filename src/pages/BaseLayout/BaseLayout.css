@@ -51,6 +51,7 @@
 
 .header img {
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .add-with-plus {
@@ -72,6 +73,7 @@
     font-size: 18px;
     line-height: 21px;
     padding-left: 12px;
+    cursor: pointer;
 }
 
 .left-side {
@@ -85,7 +87,6 @@
     width: 47px;
     height: 18px;
     margin-right: 120px;
-    /*margin-right: 488px;*/
 }
 
 .right-side {
@@ -108,6 +109,7 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
+    cursor: pointer;
 }
 
 .profile {
@@ -120,4 +122,55 @@
     max-width: 510px;
     width: 100%;
     margin: 0 auto;
+}
+
+
+ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul:after {
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+}
+ul.drop-down > li {
+    float: left;
+    position: relative;
+}
+ul.drop-down > li > a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+ul.submenu {
+    display: none;
+    position: absolute;
+    width: 120px;
+    top: 37px;
+    left: 0;
+    background-color: white;
+}
+
+ul.submenu > li {
+    display: block;
+}
+ul.submenu > li > a {
+    display: block;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+ul.submenu > li > a:hover {
+    text-decoration: underline;
+}
+
+ul.drop-down > li:hover > ul.submenu {
+    display: block;
 }

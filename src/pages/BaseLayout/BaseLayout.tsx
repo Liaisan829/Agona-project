@@ -36,7 +36,15 @@ export const BaseLayout: FC<MainContainerProps> = ({children}) => {
                     <nav className='right-side'>
                         <img src={loupe} className="loupe" alt="loupe"/>
                         <p className='search'>Поиск</p>
-                        <img src={profile} className="profile" alt="profile"/>
+
+                        <ul className="drop-down">
+                            <li><img src={profile} className="profile" alt="profile"/>
+                                <ul className="submenu">
+                                    <li><NavLink to={`/authorization`}>Вход</NavLink></li>
+                                    <li><NavLink to={`/registration`}>Регистрация</NavLink></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
 
@@ -46,7 +54,6 @@ export const BaseLayout: FC<MainContainerProps> = ({children}) => {
                 <div className="main-container">
                     {children}
                 </div>
-                {/*здесь будет как раз та коллекция фильмов которые будут лежать в стор*/}
             </main>
         </>
     )
