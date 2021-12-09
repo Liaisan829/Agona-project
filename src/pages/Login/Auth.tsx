@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from "../../images/logo.svg";
 // import {AuthCont} from '../../containers/AuthCont';
-import './logo-style.css'
+import './Logo-style.css'
 import {AuthContWithStore} from "../../containers/AuthContWithStore";
 
 function Auth() {

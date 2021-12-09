@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from "../../images/logo.svg";
 // import {RegisCont} from "../../containers/RegisCont";
-import './logo-style.css'
+import './Logo-style.css'
 import {RegisContWithStore} from "../../containers/RegisContWithStore";
 
 
