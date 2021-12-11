@@ -1,12 +1,12 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
-import './Question.css'
+import styles from './Question.module.sass'
 
 export const Question = (props) => {
   return(
-      <div className = "question">
+      <div className ={styles.question}>
           <p>{props.question}</p>
-          <NavLink className = 'a' to={props.href} >
+          <NavLink className = {styles.a} to={props.href} >
               {props.hrefText}
           </NavLink>
       </div>

@@ -1,4 +1,6 @@
 import {action, makeObservable, observable, override} from "mobx";
+import styles from '../components/ui/Input/Input.module.sass'
+
 
 export default class AuthStore {
 
@@ -83,10 +85,10 @@ export default class AuthStore {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(String(emailValue).toLowerCase())) {
             this.setEmailError(true)
-            input.classList.add('error')
+            input.classList.add(styles.error)
         } else {
             this.setEmailError(false)
-            input.classList.remove('error')
+            input.classList.remove(styles.error)
         }
     }
 
@@ -97,10 +99,10 @@ export default class AuthStore {
 
         if (password.length < 6) {
             this.setPassword1Error(true)
-            input.classList.add('error')
+            input.classList.add(styles.error)
         } else {
             this.setPassword1Error(false)
-            input.classList.remove('error')
+            input.classList.remove(styles.error)
         }
     }
 

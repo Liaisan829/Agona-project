@@ -5,7 +5,7 @@ import profile from '../../images/profile.svg'
 import loupe from '../../images/loupe.svg';
 import plus from '../../images/plus.svg'
 import round from '../../images/round.svg'
-import './BaseLayout.css'
+import styles from './BaseLayout.module.sass'
 
 interface MainContainerProps {
     children: ReactNode;
@@ -14,32 +14,32 @@ interface MainContainerProps {
 export const BaseLayout: FC<MainContainerProps> = ({children}) => {
     return (
         <>
-            <header className='header'>
-                <div className="headerCont">
-                    <nav className='left-side'>
-                        <div className="collection-round">
-                            <NavLink to='/collection' exact className='collection' activeClassName='active'>
+            <header className={styles.header}>
+                <div className={styles.headerCont}>
+                    <nav className={styles.leftSide}>
+                        <div className={styles.collectionRound}>
+                            <NavLink to='/collection' exact className={styles.collection} activeClassName={styles.active}>
                                 <img src={round} alt="round"/>
-                                <p className="collectionText">Коллекция</p>
+                                <p className={styles.collectionText}>Коллекция</p>
                             </NavLink>
                         </div>
-                        <div className='add-with-plus'>
-                            <img src={plus} className="plus" alt="plus"/>
-                            <p className='add'>Добавить</p>
+                        <div className={styles.addWithPlus}>
+                            <img src={plus} className={styles.plus} alt="plus"/>
+                            <p className={styles.add}>Добавить</p>
                         </div>
                     </nav>
 
-                    <NavLink to = {`/collection`}>
-                        <img src={logo} className="short-logo" alt="short-logo"/>
+                    <NavLink to = {`/`}>
+                        <img src={logo} className={styles.shortLogo} alt="short-logo"/>
                     </NavLink>
 
-                    <nav className='right-side'>
-                        <img src={loupe} className="loupe" alt="loupe"/>
-                        <p className='search'>Поиск</p>
+                    <nav className={styles.rightSide}>
+                        <img src={loupe} className={styles.loupe} alt="loupe"/>
+                        <p className={styles.search}>Поиск</p>
 
-                        <ul className="drop-down">
-                            <li><img src={profile} className="profile" alt="profile"/>
-                                <ul className="submenu">
+                        <ul className={styles.dropDown}>
+                            <li><img src={profile} className={styles.profile} alt="profile"/>
+                                <ul className={styles.submenu}>
                                     <li><NavLink to={`/authorization`}>Вход</NavLink></li>
                                     <li><NavLink to={`/registration`}>Регистрация</NavLink></li>
                                 </ul>
@@ -47,11 +47,10 @@ export const BaseLayout: FC<MainContainerProps> = ({children}) => {
                         </ul>
                     </nav>
                 </div>
-
             </header>
 
             <main>
-                <div className="main-container">
+                <div className={styles.mainContainer}>
                     {children}
                 </div>
             </main>

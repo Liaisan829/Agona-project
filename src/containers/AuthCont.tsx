@@ -4,7 +4,7 @@ import React, {useEffect, useState} from "react";
 import {Question} from "../components/ui/Question/Question";
 import {useHistory} from "react-router";
 import {Loading} from "../components/ui/Loading/Loading";
-
+import styles from '../components/ui/Input/Input.module.sass'
 
 export const AuthCont = () => {
     const [email, setEmail] = useState('');
@@ -33,10 +33,10 @@ export const AuthCont = () => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(String(email).toLowerCase())) {
             setEmailError(true)
-            input.classList.add('error')
+            input.classList.add(styles.error)
         } else {
             setEmailError(false)
-            input.classList.remove('error')
+            input.classList.remove(styles.error)
         }
     };
 
@@ -46,11 +46,14 @@ export const AuthCont = () => {
         setPassword(password)
 
         if (password.length < 6) {
+            console.log("hello1")
             setPasswordError(true)
-            input.classList.add('error')
+            console.log("hello2")
+            input.classList.add(styles.error)
+            console.log("hello3")
         } else {
             setPasswordError(false)
-            input.classList.remove('error')
+            input.classList.remove(styles.error)
         }
     };
 

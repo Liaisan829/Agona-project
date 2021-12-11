@@ -1,14 +1,14 @@
 import React from 'react';
 import logo from "../../images/logo.svg";
 // import {AuthCont} from '../../containers/AuthCont';
-import './Logo-style.css'
 import {AuthContWithStore} from "../../containers/AuthContWithStore";
+import styles from './Logo-style.module.sass'
 
 function Auth() {
 
     return (
-        <div className="auth">
-            <img src={logo} className="logo" alt="logo"/>
+        <div className={styles.auth}>
+            <img src={logo} className={styles.logo} alt="logo"/>
             {/*<AuthCont/>*/}
             <AuthContWithStore/>
         </div>

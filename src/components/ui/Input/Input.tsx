@@ -1,10 +1,10 @@
 import React from "react";
-import './Input.css'
+import styles from './Input.module.sass'
 
 export const Input = (props) => {
 
     return(
-        <div className = "input">
+        <div className = {styles.input}>
             <input
                 type = {props.type}
                 value = {props.value}
