@@ -1,5 +1,7 @@
+@import "../../styles/mixins.sass"
+
 .header
-  background: rgba(249, 249, 249, 0.94)
+  background: $c-background-grey
 
   img
     margin: 0 auto
@@ -10,7 +12,6 @@
     height: 18px
     margin-right: 120px
 
-
 .headerCont
   display: flex
   flex-direction: row
@@ -20,7 +21,6 @@
   align-items: center
   justify-content: space-between
 
-
 .collectionRound
   display: flex
   flex-direction: row
@@ -28,18 +28,16 @@
 
   .collection
     color: black
-    font-family: SF Pro Text, sans-serif
     font-style: normal
     font-weight: 500
-    font-size: 18px
-    line-height: 21px
+    @include regular-text
     text-decoration: none
     display: flex
     flex-direction: row
     align-items: center
 
   .active
-    background: #002DFF
+    background: $c-primary
     border-radius: 21px
     padding: 8px 10px
     color: white
@@ -50,7 +48,7 @@
 
   .collection img
     margin: 0 auto
-    background: #002DFF
+    background: $c-primary
     border-radius: 50%
 
 .addWithPlus
@@ -64,11 +62,9 @@
     height: 21px
 
   .add
-    font-family: SF Pro Text, sans-serif
     font-style: normal
     font-weight: 500
-    font-size: 18px
-    line-height: 21px
+    @include regular-text
     padding-left: 12px
     cursor: pointer
 
@@ -85,33 +81,26 @@
   align-items: center
   max-width: 200px
 
-
 .loupe
   width: 21px
   height: 21px
 
-
 .search
   padding-left: 11px
-  font-family: SF Pro Text, sans-serif
   font-style: normal
   font-weight: 500
-  font-size: 18px
-  line-height: 21px
+  @include regular-text
   cursor: pointer
-
 
 .profile
   width: 40px
   height: 40px
   padding-left: 31px
 
-
 .mainContainer
   max-width: 510px
   width: 100%
   margin: 0 auto
-
 
 ul
   display: block
@@ -135,7 +124,6 @@ ul.dropDown > li > a
   color: white
   text-decoration: none
 
-
 ul.submenu
   display: none
   position: absolute
@@ -143,7 +131,6 @@ ul.submenu
   top: 37px
   left: 0
   background-color: white
-
 
 ul.submenu > li
   display: block
@@ -157,7 +144,6 @@ ul.submenu > li > a
 
 ul.submenu > li > a:hover
   text-decoration: underline
-
 
 ul.dropDown > li:hover > ul.submenu
   display: block

@@ -1,10 +1,10 @@
 import {FC, ReactNode} from "react";
 import {NavLink} from 'react-router-dom';
-import logo from '../../images/short-logo.svg'
-import profile from '../../images/profile.svg'
-import loupe from '../../images/loupe.svg';
-import plus from '../../images/plus.svg'
-import round from '../../images/round.svg'
+import logo from '../../images/icons/short-logo.svg'
+import profile from '../../images/icons/profile.svg'
+import loupe from '../../images/icons/loupe.svg';
+import plus from '../../images/icons/plus.svg'
+import round from '../../images/icons/round.svg'
 import styles from './BaseLayout.module.sass'
 
 interface MainContainerProps {

@@ -1,12 +1,11 @@
-import {Input} from "../components/ui/Input/Input";
-import {Button} from '../components/ui/Button/Button';
+import {Input} from "../../components/ui/Input/Input";
+import {Button} from '../../components/ui/Button/Button';
 import React, {useEffect} from "react";
-import {Question} from "../components/ui/Question/Question";
+import {Question} from "../../components/ui/Question/Question";
 import {useHistory} from "react-router";
-import {Loading} from "../components/ui/Loading/Loading";
-import {useStores} from "../utils/Utils";
+import {Loading} from "../../components/ui/Loading/Loading";
+import {useStores} from "../../utils/Utils";
 import {observer} from "mobx-react";
-
 
 export const AuthContWithStore = observer(() => {
 
@@ -20,11 +19,10 @@ export const AuthContWithStore = observer(() => {
                 inputError,
                 formValid,
                 isRegistered,
-                setFormValid,
-                setInputError,
-                setIsRegistered,
+                setFieldValue,
                 validateEmail,
                 validatePassword1
+
             }
     } = useStores();
 
@@ -32,23 +30,23 @@ export const AuthContWithStore = observer(() => {
 
     useEffect(() => {
         if (email.length > 0 || password1.length > 0) {
-            setFormValid(true);
+            setFieldValue(true, formValid);
 
         } else {
-            setFormValid(false)
+            setFieldValue(false, formValid)
         }
     }, [email, password1])
 
     const onButtonClick = () => {
         if (emailError || password1Error) {
-            setFormValid(false);
-            setInputError('Неверные пароль или логин')
+            setFieldValue(false, formValid);
+            setFieldValue('Неверные пароль или логин', inputError)
         } else {
-            setFormValid(true);
-            setInputError('')
-            setIsRegistered(true)
+            setFieldValue(true, formValid);
+            setFieldValue('', inputError)
+            setFieldValue(true, isRegistered)
             setTimeout(() => {
-                setIsRegistered(false)
+                setFieldValue(false, isRegistered)
                 history.push("/collection")
             }, 3000, 3001);
 
@@ -59,10 +57,10 @@ export const AuthContWithStore = observer(() => {
         <div className="authCont">
             <Input type="email" value={email} onChange={validateEmail} placeholder="Адрес электронной почты"/>
             <Input className = "last-input" type="password" value={password1} onChange={validatePassword1} placeholder="Пароль"/>
-            {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
+            {(inputError) && <div className = "inputError" >{inputError}</div>}
             {isRegistered ?
                 <Loading/> :
-                <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText="Регистрация"/>
+                <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText="Вход"/>
             }
             <Question question='Еще не зарегистрированы?' href='/registration' hrefText='Регистрация'/>
         </div>

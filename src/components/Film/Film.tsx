@@ -1,4 +1,4 @@
-import {FilmModel} from "../model/FilmModel";
+import {FilmModel} from "../../model/FilmModel";
 import {FC} from "react";
 import {NavLink} from "react-router-dom";
 import styles from './Film.module.sass'

@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 import {useHistory} from "react-router";
-import {Input} from "../components/ui/Input/Input";
-import {Loading} from "../components/ui/Loading/Loading";
-import {Button} from "../components/ui/Button/Button";
-import {Question} from "../components/ui/Question/Question";
+import {Input} from "../../components/ui/Input/Input";
+import {Loading} from "../../components/ui/Loading/Loading";
+import {Button} from "../../components/ui/Button/Button";
+import {Question} from "../../components/ui/Question/Question";
 import {observer} from "mobx-react";
-import {useStores} from "../utils/Utils";
+import {useStores} from "../../utils/Utils";
 
 export const RegisContWithStore = observer(() => {
     const {
@@ -19,9 +19,7 @@ export const RegisContWithStore = observer(() => {
             inputError,
             formValid,
             isRegistered,
-            setFormValid,
-            setInputError,
-            setIsRegistered,
+            setFieldValue,
             validateEmail,
             validatePassword1,
             validatePassword2
@@ -29,28 +27,29 @@ export const RegisContWithStore = observer(() => {
     } = useStores();
     const history = useHistory();
 
+
     useEffect(() => {
         if (email.length > 0 || password1.length > 0 || password2.length > 0) {
-            setFormValid(true);
+            setFieldValue(true, formValid);
 
         } else {
-            setFormValid(false)
+            setFieldValue(false, formValid)
         }
     }, [email, password1, password2])
 
     const onButtonClick = () => {
         if (emailError) {
-            setFormValid(false);
-            setInputError('Неверный email')
+            setFieldValue(false, formValid);
+            setFieldValue('Неверный email', inputError)
         } else if (password1Error || password2Error) {
-            setFormValid(false);
-            setInputError('Неверный пароль')
+            setFieldValue(false, formValid);
+            setFieldValue('Неверный пароль', inputError)
         } else {
-            setFormValid(true);
-            setInputError('')
-            setIsRegistered(true)
+            setFieldValue(true, formValid);
+            setFieldValue('', inputError)
+            setFieldValue(true, isRegistered)
             setTimeout(() => {
-                setIsRegistered(false)
+                setFieldValue(false, isRegistered)
                 history.push("/collection")
             }, 3000, 3001);
 
@@ -62,7 +61,7 @@ export const RegisContWithStore = observer(() => {
             <Input type="email" value={email} onChange={validateEmail} placeholder="Адрес электронной почты"/>
             <Input type="password" value={password1} onChange={validatePassword1} placeholder="Пароль"/>
             <Input type="password" className = "last-input" value={password2} onChange={validatePassword2} placeholder="Повторите пароль"/>
-            {(inputError) && <div style={{color: 'red', marginTop: 18}}>{inputError}</div>}
+            {(inputError) && <div className = "inputError">{inputError}</div>}
             {isRegistered ?
                 <Loading/> :
                 <Button type="submit" disabled={!formValid} onClick={onButtonClick} buttonText="Регистрация"/>

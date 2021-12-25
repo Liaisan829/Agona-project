@@ -1,5 +1,5 @@
-import {FilmStore} from "./FilmStore";
-import AuthStore from "./AuthStore";
+import {FilmStore} from "../FilmStore/FilmStore";
+import AuthStore from "../AuthStore/AuthStore";
 
 class MainStore{
 

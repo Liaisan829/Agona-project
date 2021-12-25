@@ -1,9 +1,9 @@
 import {BaseLayout} from "../BaseLayout/BaseLayout";
 import {observer} from "mobx-react";
 import {useStores} from "../../utils/Utils";
-import {Film} from "../../components/Film";
+import {Film} from "../../components/Film/Film";
 import {ToggleSwitch} from "../../components/ui/ToggleSwitch/ToggleSwitch";
-import menu from '../../images/menu.svg'
+import menu from '../../images/icons/menu.svg'
 import styles from "./FilmsPage.module.sass"
 
 export const FilmsPage = observer(() => {

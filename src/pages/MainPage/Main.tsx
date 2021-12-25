@@ -1,5 +1,5 @@
-import logo from '../../images/logo.svg';
-import agona from '../../images/agona.svg'
+import logo from '../../images/icons/logo.svg';
+import agona from '../../images/icons/agona.svg'
 import React from "react";
 import {BaseLayout} from "../BaseLayout/BaseLayout";
 import styles from './Main.module.sass'

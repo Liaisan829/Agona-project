@@ -4,7 +4,7 @@ import {useStores} from "../../utils/Utils";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {FilmModel} from "../../model/FilmModel";
-import {InfoFilm} from "../../components/InfoFilm";
+import {InfoFilm} from "../../components/InfoFilm/InfoFilm";
 
 interface Params {
     id: string;

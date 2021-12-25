@@ -1,6 +1,6 @@
-import {FilmModel} from "../model/FilmModel";
+import {FilmModel} from "../../model/FilmModel";
 import {FC} from "react";
-import plus from '../images/plus.svg';
+import plus from '../../images/icons/plus.svg';
 import styles from './InfoFilm.module.sass'
 
 interface FilmProps {
